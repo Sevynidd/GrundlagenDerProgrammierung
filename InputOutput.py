@@ -28,10 +28,12 @@ if __name__ == '__main__':
                     mywriter.writerows(np.array(arr))
             except IOError:
                 print("Es ist folgender Fehler aufgetreten: ", exc_info()[0])
+
+
         case 2:
             Pfad = input("In welchem Pfad liegt die Csv-Datei?")
             try:
-                df = pd.read_csv(Pfad, index_col=0)
+                df = pd.read_csv(Pfad, delimiter=";")
                 print(df)
             except IOError:
                 print("Es ist folgender Fehler aufgetreten: ", exc_info()[0])
