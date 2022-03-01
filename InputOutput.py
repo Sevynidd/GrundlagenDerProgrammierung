@@ -18,20 +18,19 @@ if __name__ == '__main__':
             for z in range(zeilen):
                 for sp in range(spalten):
                     if z == 0:
-                        arr[z][sp] = input(f"Überschrift {sp+1}: ")
+                        arr[z][sp] = input(f"Überschrift {sp + 1}: ")
                     else:
-                        arr[z][sp] = input(f"Zeile {z+1}, Spalte {sp+1}: ")
-            Pfad = input("In welchem Pfad soll die CSV-Datei gespeichert werden?")
+                        arr[z][sp] = input(f"Zeile {z + 1}, Spalte {sp + 1}: ")
+            Pfad = input("In welchem Pfad soll die CSV-Datei gespeichert werden?\n(Format: "
+                         "C:\\Users\\User\\Desktop\\CSV.csv)")
             try:
                 with open(Pfad, 'w', newline='') as file:
                     mywriter = csv.writer(file, delimiter=';')
                     mywriter.writerows(np.array(arr))
             except IOError:
                 print("Es ist folgender Fehler aufgetreten: ", exc_info()[0])
-
-
         case 2:
-            Pfad = input("In welchem Pfad liegt die Csv-Datei?")
+            Pfad = input("In welchem Pfad liegt die Csv-Datei?\n(Format: C:\\Users\\User\\Desktop\\CSV.csv)")
             try:
                 df = pd.read_csv(Pfad, delimiter=";")
                 print(df)
