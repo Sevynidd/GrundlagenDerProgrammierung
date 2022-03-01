@@ -2,7 +2,7 @@ import numpy.core as np
 import pandas.core.frame as pd
 
 
-def erstellen_der_tabelle(noten_der_faecher):
+def erstellen_der_tabelle(noten_der_faecher, Faecher):
     """ Import Pandas braucht ein Array um daraus eine Tabelle zu machen, doch NotenDerFaecher ist eine Liste.
             Deshalb numpy_data = NotenDerFaecher"""
     numpy_data = np.array([noten_der_faecher])
@@ -40,7 +40,7 @@ def abfrageFächer():
         NotenDerFaecher.append(int(input(f"Note für {Faecher[i]}?: ")))
         print("")
 
-    erstellen_der_tabelle(NotenDerFaecher)
+    erstellen_der_tabelle(NotenDerFaecher, Faecher)
 
     # Notendurchschnitt der Fächer ausrechnen
     Notendurchschnitt = 0.0
