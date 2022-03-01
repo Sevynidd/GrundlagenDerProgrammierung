@@ -1,6 +1,7 @@
 import pandas as pd
 from sys import exc_info
 import numpy as np
+import csv
 
 if __name__ == '__main__':
 
@@ -17,12 +18,14 @@ if __name__ == '__main__':
             for z in range(zeilen):
                 for sp in range(spalten):
                     if z == 0:
-                        arr[z][sp] = input("Überschrift ", sp+1, ": ")
+                        arr[z][sp] = input(f"Überschrift {sp+1}: ")
                     else:
-                        arr[z][sp] = input("Zeile ", z + 1, ", Spalte ", sp+1, ": ")
+                        arr[z][sp] = input(f"Zeile {z+1}, Spalte {sp+1}: ")
             Pfad = input("In welchem Pfad soll die CSV-Datei gespeichert werden?")
             try:
-                np.savetxt(Pfad, arr, delimiter=";")
+                with open(Pfad, 'w', newline='') as file:
+                    mywriter = csv.writer(file, delimiter=';')
+                    mywriter.writerows(np.array(arr))
             except IOError:
                 print("Es ist folgender Fehler aufgetreten: ", exc_info()[0])
         case 2:
