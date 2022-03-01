@@ -12,7 +12,7 @@ if __name__ == '__main__':
             spalten = int(input("Wie viele Spalten?"))
             zeilen = int(input("Wie viele Zeilen?"))
 
-
+            arr = [[0 for x in range(spalten)] for y in range(zeilen)]
 
             for z in range(zeilen):
                 for sp in range(spalten):
