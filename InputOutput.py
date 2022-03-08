@@ -1,5 +1,4 @@
 import pandas as pd
-from sys import exc_info
 import numpy as np
 import csv
 from InputOutputFiles import Kopieren
@@ -15,9 +14,4 @@ if __name__ == '__main__':
         case 1:
             Schreiben.func_write()
         case 2:
-            Pfad = input("In welchem Pfad liegt die Csv-Datei?\n(Format: C:\\Users\\User\\Desktop\\CSV.csv)")
-            try:
-                df = pd.read_csv(Pfad, delimiter=";")
-                print(df)
-            except IOError:
-                print("Es ist folgender Fehler aufgetreten: ", exc_info()[0])
+            Lesen.func_read()

@@ -1,5 +1,7 @@
 import csv
 import numpy as np
+from sys import exc_info
+
 
 def func_write():
     spalten = int(input("Wie viele Spalten?"))
