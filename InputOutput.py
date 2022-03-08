@@ -8,10 +8,12 @@ from InputOutputFiles import Lesen
 if __name__ == '__main__':
 
     auswahl = 0
-    while (not auswahl == 1) and (not auswahl == 2):
-        auswahl = int(input("1. Schreiben oder 2. Lesen?"))
+    while (auswahl < 1) or (auswahl > 3):
+        auswahl = int(input("1. Schreiben, 2. Lesen oder 3. Kopieren?"))
     match auswahl:
         case 1:
             Schreiben.func_write()
         case 2:
             Lesen.func_read()
+        case 3:
+            Kopieren.func_copy()
