@@ -11,7 +11,7 @@ with open('C:\\Users\\Karina\\Desktop\\07 Wetter Daten.csv', newline='') as csvf
     reader = csv.DictReader(csvfile)
     for row in reader:
         # 'DE_temperature' ist der Name einer Spalte, wie diese in der 1. Zeile notiert ist.
-        dataList.append(float(row['DE_temperature']))
+        dataList.append(float(row['DE_radiation_diffuse_horizontal']))
 
     # Plotten der Daten
     matplotlib.pyplot.plot(dataList)
