@@ -29,7 +29,7 @@ if __name__ == '__main__':
                         wertanzahl += 1
                         temperaturEinesMonats += float(row['DE_temperature'])
                     else:
-                        monat += 1
+                        monat = dt.month
                         if not wertanzahl == 0:
                             temperaturEinesMonats /= wertanzahl
                             dataList.append(float(temperaturEinesMonats))
