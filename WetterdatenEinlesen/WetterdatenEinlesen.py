@@ -37,7 +37,28 @@ if __name__ == '__main__':
                             wertanzahl = 0
 
         case 2:
-            print()
+            temperaturEinesJahres = 0.0
+            jahr = 1980
+            wertanzahl = 0
+
+            # Öffnen der CSV Datei
+            with open('C:\\Users\\Karina\\Desktop\\07 Wetter Daten.csv', newline='') as csvfile:
+                # Zeilenweises Einlesen der CSV Datei
+                reader = csv.DictReader(csvfile)
+
+                for row in reader:
+                    timestamp_str = row['utc_timestamp']
+                    dt = datetime.fromisoformat(timestamp_str.replace('Z', '+00:00'))
+                    if jahr == dt.year:
+                        wertanzahl += 1
+                        temperaturEinesJahres += float(row['DE_temperature'])
+                    else:
+                        jahr += 1
+                        if not wertanzahl == 0:
+                            temperaturEinesJahres /= wertanzahl
+                            dataList.append(float(temperaturEinesJahres))
+                            temperaturEinesJahres = 0.0
+                            wertanzahl = 0
         case 3:
             print()
 
