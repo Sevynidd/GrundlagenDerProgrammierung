@@ -2,12 +2,15 @@ import csv
 import matplotlib.pyplot as plt
 from datetime import datetime
 import numpy as np
+import tkinter
+from tkinter import filedialog
 
 dataTempJedesMonats = []
 dataJahresDurchschnitt = []
 dataTemp11Uhr = []
 
-Pfad = 'C:\\Users\\Karina\\Desktop\\07 Wetter Daten.csv'
+Pfad = ''
+#'C:\\Users\\Karina\\Desktop\\07 Wetter Daten.csv'
 
 def plot1():
     temperaturEinesMonats = 0.0
@@ -71,6 +74,12 @@ def plot3():
 
 
 if __name__ == '__main__':
+
+    tkinter.Tk().withdraw()
+    Pfad = filedialog.askdirectory()
+
+    Pfad += "\\07 Wetter Daten.csv"
+
 
     fig, ax = plt.subplots(1, 3)
 
