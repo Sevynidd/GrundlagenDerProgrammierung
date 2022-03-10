@@ -7,13 +7,14 @@ dataTempJedesMonats = []
 dataJahresDurchschnitt = []
 dataTemp11Uhr = []
 
+Pfad = 'C:\\Users\\Karina\\Desktop\\07 Wetter Daten.csv'
 
 def plot1():
     temperaturEinesMonats = 0.0
     monat = 1
     wertanzahl = 0
     # Öffnen der CSV Datei
-    with open('C:\\Users\\Karina\\Desktop\\07 Wetter Daten.csv', newline='') as csvfile:
+    with open(Pfad, newline='') as csvfile:
         # Zeilenweises Einlesen der CSV Datei
         reader = csv.DictReader(csvfile)
 
@@ -37,7 +38,7 @@ def plot2():
     jahr = 1980
     wertanzahl = 0
     # Öffnen der CSV Datei
-    with open('C:\\Users\\Karina\\Desktop\\07 Wetter Daten.csv', newline='') as csvfile:
+    with open(Pfad, newline='') as csvfile:
         # Zeilenweises Einlesen der CSV Datei
         reader = csv.DictReader(csvfile)
 
@@ -58,7 +59,7 @@ def plot2():
 
 def plot3():
     # Öffnen der CSV Datei
-    with open('C:\\Users\\Karina\\Desktop\\07 Wetter Daten.csv', newline='') as csvfile:
+    with open(Pfad, newline='') as csvfile:
         # Zeilenweises Einlesen der CSV Datei
         reader = csv.DictReader(csvfile)
 
