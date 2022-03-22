@@ -77,9 +77,9 @@ def plot3():
 
 if __name__ == '__main__':
     tkinter.Tk().withdraw()
-    Pfad = filedialog.askdirectory()
+    Pfad = filedialog.askopenfilename()
 
-    Pfad += "\\07 Wetter Daten.csv"
+    #Pfad += "\\07 Wetter Daten.csv"
 
     fig, ax = plt.subplots(1, 3)
 
