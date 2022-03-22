@@ -15,9 +15,9 @@ Pfad = ''
 
 
 def plot1():
-    temperaturEinesMonats = 0.0
+    temperatur_eines_monats = 0.0
     monat = 1
-    wertanzahl = 0
+    wertanzahl_plot1 = 0
     # Öffnen der CSV Datei
     with open(Pfad, newline='') as csvfile:
         # Zeilenweises Einlesen der CSV Datei
@@ -27,21 +27,21 @@ def plot1():
             timestamp_str = row['utc_timestamp']
             dt = datetime.fromisoformat(timestamp_str.replace('Z', '+00:00'))
             if monat == dt.month:
-                wertanzahl += 1
-                temperaturEinesMonats += float(row['DE_temperature'])
+                wertanzahl_plot1 += 1
+                temperatur_eines_monats += float(row['DE_temperature'])
             else:
                 monat = dt.month
-                if not wertanzahl == 0:
-                    temperaturEinesMonats /= wertanzahl
-                    dataTempJedesMonats.append(float(temperaturEinesMonats))
-                    temperaturEinesMonats = 0.0
-                    wertanzahl = 0
+                if not wertanzahl_plot1 == 0:
+                    temperatur_eines_monats /= wertanzahl_plot1
+                    dataTempJedesMonats.append(float(temperatur_eines_monats))
+                    temperatur_eines_monats = 0.0
+                    wertanzahl_plot1 = 0
 
 
 def plot2():
-    temperaturEinesJahres = 0.0
+    temperatur_eines_jahres = 0.0
     jahr = 1980
-    wertanzahl = 0
+    wertanzahl_plot2 = 0
     # Öffnen der CSV Datei
     with open(Pfad, newline='') as csvfile:
         # Zeilenweises Einlesen der CSV Datei
@@ -51,15 +51,15 @@ def plot2():
             timestamp_str = row['utc_timestamp']
             dt = datetime.fromisoformat(timestamp_str.replace('Z', '+00:00'))
             if jahr == dt.year:
-                wertanzahl += 1
-                temperaturEinesJahres += float(row['DE_temperature'])
+                wertanzahl_plot2 += 1
+                temperatur_eines_jahres += float(row['DE_temperature'])
             else:
                 jahr += 1
-                if not wertanzahl == 0:
-                    temperaturEinesJahres /= wertanzahl
-                    dataJahresDurchschnitt.append(float(temperaturEinesJahres))
-                    temperaturEinesJahres = 0.0
-                    wertanzahl = 0
+                if not wertanzahl_plot2 == 0:
+                    temperatur_eines_jahres /= wertanzahl_plot2
+                    dataJahresDurchschnitt.append(float(temperatur_eines_jahres))
+                    temperatur_eines_jahres = 0.0
+                    wertanzahl_plot2 = 0
 
 
 def plot3():
