@@ -85,8 +85,6 @@ if __name__ == '__main__':
 
     plot1()
 
-    wertanzahl = 0
-
     plot2()
 
     plot3()
